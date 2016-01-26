@@ -38,6 +38,7 @@ dependencies {
         transitive = false
     }
 
+    testCompile 'org.apache.camel:camel-test-spring:2.16.1'
 }
 
 task wrapper(type: Wrapper) {

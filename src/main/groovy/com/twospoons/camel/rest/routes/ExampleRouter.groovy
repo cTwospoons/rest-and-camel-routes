@@ -11,7 +11,12 @@ class ExampleRouter extends RouteBuilder{
     void configure() throws Exception {
         from("direct:hello")
                 .log(INFO, 'Hello Route Fired')
+                .to('direct:end')
         from("direct:bye")
                 .log(INFO, 'Bye Route Fired')
+                .to('direct:end')
+
+        from("direct:end")
+            .to('log:out')
     }
 }
